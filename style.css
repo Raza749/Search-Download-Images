@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Amazon Ember", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    /* background-color: #5e548ea2; */
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.container .userInput {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container .userInput h2{
+    font-size: 24px;
+    margin: 5px 0;
+    font-weight: 400;
+    color: #534889;
+
+}
+
+.container .userInput .inputField {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    height: 55%;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 2px solid #5e548e;
+}
+
+.container .userInput .inputField input {
+    width: 87%;
+    height: 100%;
+    padding: 20px;
+    font-size: 20px;
+    color: #5e548e;
+    border: none;
+    outline: none;
+}
+
+.container .userInput .inputField #searchBtn {
+    width: 13%;
+    height: 100%;
+    padding: 5px;
+    font-size: 20px;
+    border: 2px solid #5e548e;
+    outline: none;
+    background-color: #5e548e;
+    color: white;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.container .userInput .inputField #searchBtn:hover {
+    background-color: #534889;
+}
+
+
+.container .main {
+    height: 100%;
+    max-width: 85%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    position: relative;
+}
+
+.container .main .imgContainer {
+    height: 340px;
+    width: 24%;
+    background-color:#9f86c0da;
+    border-radius: 5px;
+    box-shadow: 3px 4px 5px 3px rgba(0, 0, 0, 0.263);
+    overflow: hidden;
+    border: 1.4px solid white;
+}
+
+.container .main .imgContainer img{
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+    transition: .5s ease;
+}
+
+.container .main .imgContainer img:hover{
+    transform: scale(1.1);
+    margin-bottom: 5px;
+}
+
+.container .main .imgContainer .des{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:11px;
+}
+
+.container .main .imgContainer .des .imgName{
+    font-size: 15px;
+    padding: 0 0 10px 0 ;
+    color: black;
+    text-transform: capitalize;
+}
+
+.container .main .imgContainer .des a{
+    background-color: #5e548e;
+    text-decoration: none;
+    padding:4px 12px;
+    border-radius: 20px;
+    color: white;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+
+/* Creating the overlay */
+.container .overlay{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.739);
+    z-index:10;
+    display: none;
+    padding: 30px;
+}
+
+.container .overlay .closeBtn{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+.container .overlay .closeBtn i{
+    color: crimson;
+    font-size: 20px;
+}
+
+.container .overlay .imgDetail{
+    width: 40%;
+    height: 90%;
+    background-color:  #9f86c0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.557);
+    overflow: hidden;
+}
+
+.container .overlay .imgDetail img{
+    height: 91%;
+    width: 100%;
+    object-fit: cover;
+    transition: .5s ease;
+}
+
+.container .overlay .imgDetail img:hover{
+    scale: 1.1;
+}
+
+.container .overlay .imgDetail .del{
+    width: 100%;
+    height: 9%;
+    padding: 10px;
+    background-color: #9f86c0;
+}
+
+.container .overlay .imgDetail .del .imgName{
+    font-size: 20px;
+    /* color: white; */
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.container .overlayActive{
+    display: block;
+}
+
+
+
+
+
+/* Responsiveness For mobile devices */
+@media(max-width:767px) {
+    .container .userInput .inputField {
+        width: 83%;
+    }
+
+    .container .userInput .inputField input {
+        font-size: 17px;
+        padding: 15px;
+        /* width: 80%; */
+    }
+
+    .container .userInput .inputField #searchBtn {
+        font-size: 17px;
+    }
+
+
+    .container .overlay{
+        width: 100%;
+    }
+
+    .container .overlay .imgDetail{
+        width: 87%;
+        height: 75%;
+    }
+
+    .container .overlay .imgDetail .del .imgName{
+        font-size: 14px;
+    }
+
+
+
+    .container .main {
+        height: auto;
+        max-width: 99%;
+        margin: 10px auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 5px;
+        justify-content: center;
+    }
+
+
+    .container .main .imgContainer {
+        height: 300px;
+        width: 88%;
+    }
+
+    .container .userInput h2{
+        font-size: 15px;
+    }
+
+   
+
+
+    .container .overlay .imgDetail{
+        width: 80%;
+        height: 75%;
+    }
+
+
+
+
+}
